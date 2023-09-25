@@ -30,3 +30,33 @@ appDiv.innerHTML = `<h1>JS Starter</h1>`;
 // };
 
 // countValidWords('alice and  bob are playing stone-game10');
+
+var bestClosingTime = function (customers) {
+  console.log(customers);
+
+  let penalty = {
+    0: 0,
+  };
+
+  console.log(penalty);
+
+  for (let i = 0; i < customers.length; i++) {
+    if (customers[i] === 'Y') {
+      penalty[0]++;
+    }
+  }
+
+  console.log(penalty);
+
+  for (let i = 0; i < customers.length; i++) {
+
+      let penal = 0
+
+    
+
+  }
+
+  console.log(penalty);
+};
+
+bestClosingTime('YYNY');
