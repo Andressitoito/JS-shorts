@@ -29,44 +29,57 @@
 ///////////////////////////////////////////////
 // 2483. Minimum Penalty for a Shop
 ///////////////////////////////////////////////
-// var bestClosingTime = function (customers) {
-//   console.log(customers);
+var bestClosingTime = function (customers) {
+  console.log(customers);
 
-//   let penalty = {
-//     0: 0,
-//   };
+  let penalty = {
+    0: 0,
+  };
 
-//   console.log(penalty);
+  console.log(penalty);
 
-//   for (let i = 0; i < customers.length; i++) {
-//     if (customers[i] === 'Y') {
-//       penalty[0]++;
-//     }
-//   }
+  for (let i = 0; i < customers.length; i++) {
+    if (customers[i] === 'Y') {
+      penalty[0]++;
+    }
+  }
 
-//   console.log(penalty);
+  console.log(penalty);
 
-//   for (let i = 0; i < customers.length; i++) {
-//     let penal = 0;
+  for (let i = 0; i < customers.length; i++) {
+    let penal = 0;
+    
+    // penalty[i + 1] = 0;
 
-//     // penalty[i + 1] = 0;
+    let time = i + 1;
+    
+    // console.log(penal)
+    console.log('/////////////////////');
+    console.log('Time Close ', time);
+    
+    for (let j = 0; j < customers.length; j++) {
+      const client = customers[j]
+      // console.log(customers[j], 'open yes or no ', customers[i]);
+      if(j >= i) {
+        console.log('CLOSED', customers[j], 'open yes or no --->', customers[i], '          ', 'client -->', client,  'if client N penalty + 1 ')
+        if(client === 'Y'){
+          penal++
+        }
+      } else {
+        console.log('OPEN', customers[j], 'open yes or no --->', customers[i], '          ', 'client -->', client, 'if client N penalty + 1 ')
+        if(client === 'N'){
+          penal++
+        }
+      }
+    }
 
-//     penalty[i + 1] = 0;
+    penalty[`Time ${i + 1}`] = penal;
+  }
 
-//     let time = i + 1;
+  console.table(penalty);
+};
 
-//     // console.log(penal)
-
-//     for (let j = i + 1; j < customers.length; j++) {
-//       console.log('aasd');
-
-//     }
-//   }
-
-//   console.log(penalty);
-// };
-
-// bestClosingTime('YYNY');
+bestClosingTime('YYNY');
 
 ///////////////////////////////////////////////
 // 482. License Key Formatting
