@@ -1,11 +1,6 @@
-// Import stylesheets
-import './style.css';
-
-// Write Javascript code!
-const appDiv = document.getElementById('app');
-appDiv.innerHTML = `<h1>JS Starter</h1>`;
-
-// // 2047. Number of Valid Words in a Sentence
+///////////////////////////////////////////////
+// 2047. Number of Valid Words in a Sentence
+///////////////////////////////////////////////
 // var countValidWords = function (sentence) {
 //   console.log(sentence);
 
@@ -31,32 +26,95 @@ appDiv.innerHTML = `<h1>JS Starter</h1>`;
 
 // countValidWords('alice and  bob are playing stone-game10');
 
-var bestClosingTime = function (customers) {
-  console.log(customers);
+///////////////////////////////////////////////
+// 2483. Minimum Penalty for a Shop
+///////////////////////////////////////////////
+// var bestClosingTime = function (customers) {
+//   console.log(customers);
 
-  let penalty = {
-    0: 0,
-  };
+//   let penalty = {
+//     0: 0,
+//   };
 
-  console.log(penalty);
+//   console.log(penalty);
 
-  for (let i = 0; i < customers.length; i++) {
-    if (customers[i] === 'Y') {
-      penalty[0]++;
-    }
-  }
+//   for (let i = 0; i < customers.length; i++) {
+//     if (customers[i] === 'Y') {
+//       penalty[0]++;
+//     }
+//   }
 
-  console.log(penalty);
+//   console.log(penalty);
 
-  for (let i = 0; i < customers.length; i++) {
+//   for (let i = 0; i < customers.length; i++) {
+//     let penal = 0;
 
-      let penal = 0
+//     // penalty[i + 1] = 0;
 
-    
+//     penalty[i + 1] = 0;
 
-  }
+//     let time = i + 1;
 
-  console.log(penalty);
-};
+//     // console.log(penal)
 
-bestClosingTime('YYNY');
+//     for (let j = i + 1; j < customers.length; j++) {
+//       console.log('aasd');
+
+//     }
+//   }
+
+//   console.log(penalty);
+// };
+
+// bestClosingTime('YYNY');
+
+///////////////////////////////////////////////
+// 482. License Key Formatting
+///////////////////////////////////////////////
+// var licenseKeyFormatting = function (s, k) {
+//   console.log(s, 'k ==>', k);
+
+//   let count = 0;
+//   const sentence = s.split('').reverse();
+
+//   let str = '';
+
+//   const key = [];
+
+//   for (let i = 0; i < sentence.length; i++) {
+
+//     if (count === k) {
+//       count = 0;
+//       key.push(str);
+//       str = '';
+//     } else {
+//       if (sentence[i] !== '-') {
+//         str += sentence[i].toUpperCase();
+
+//         if (sentence[i + 1] === undefined) {
+//           key.push(str);
+//         }
+
+//         count++;
+//       }
+//     }
+//     console.log(str);
+//   }
+
+//   console.log(key);
+
+//   for (let i = 0; i < key.length; i++) {
+//     console.log(key[i])
+//      key[i] = key[i].split('').reverse().join('')
+
+//   }
+
+//   console.log(key)
+//   const license = key.reverse().join('-')
+
+//   console.log(license)
+
+//   return license
+// };
+
+// licenseKeyFormatting('5F3Z-2e-9-w', 4);
