@@ -48,29 +48,73 @@ var bestClosingTime = function (customers) {
 
   for (let i = 0; i < customers.length; i++) {
     let penal = 0;
-    
+
     // penalty[i + 1] = 0;
 
     let time = i + 1;
-    
+
+    const open = customers[i];
+
     // console.log(penal)
     console.log('/////////////////////');
     console.log('Time Close ', time);
-    
+
     for (let j = 0; j < customers.length; j++) {
-      const client = customers[j]
+      console.log('--------------------------------')
+      const client = customers[j];
       // console.log(customers[j], 'open yes or no ', customers[i]);
-      if(j >= i) {
-        console.log('CLOSED', customers[j], 'open yes or no --->', customers[i], '          ', 'client -->', client,  'if client N penalty + 1 ')
-        if(client === 'Y'){
-          penal++
+      if(i === j) {
+        console.log(
+          'I === J ',
+          open,
+          'clients --->',
+          customers[j],
+          '          ',
+          'client -->',
+          client,
+          'CLOSED ',
+          open
+        );
+        penal--
+
+      } 
+
+      if (j >= i) {
+        console.log(
+          'CLOSED',
+          open,
+          'clients --->',
+          customers[j],
+          '          ',
+          'client -->',
+          client,
+          'CLOSED ',
+          open
+        );
+        if (open === 'Y' && client === 'Y') {
+          penal++;
+          console.log(`CLOSED? ${open} && client? ${client} ---> PENALTY`);
         }
+
       } else {
-        console.log('OPEN', customers[j], 'open yes or no --->', customers[i], '          ', 'client -->', client, 'if client N penalty + 1 ')
-        if(client === 'N'){
-          penal++
+        console.log(
+          'OPEN   ',
+          open,
+          'clients --->',
+          customers[j],
+          '          ',
+          'client -->',
+          client,
+          'OPEN ',
+          open
+        );
+        if (open === 'N' && client === 'Y') {
+          penal++;
+          console.log(`OPEN? ${open} && client? ${client} ---> PENALTY`);
         }
       }
+
+
     }
 
     penalty[`Time ${i + 1}`] = penal;
