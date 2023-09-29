@@ -29,101 +29,89 @@
 ///////////////////////////////////////////////
 // 2483. Minimum Penalty for a Shop
 ///////////////////////////////////////////////
-var bestClosingTime = function (customers) {
-  console.log(customers);
+// var bestClosingTime = function (customers) {
+//   console.log(customers);
 
-  let penalty = {
-    0: 0,
-  };
+//   let penalty = {
+//     // 0: 0,
+//   };
 
-  console.log(penalty);
+//   // console.log(penalty);
 
-  for (let i = 0; i < customers.length; i++) {
-    if (customers[i] === 'Y') {
-      penalty[0]++;
-    }
-  }
+//   // for (let i = 0; i < customers.length; i++) {
+//   //   if (customers[i] === 'Y') {
+//   //     penalty[0]++;
+//   //   }
+//   // }
 
-  console.log(penalty);
+//   console.log(penalty);
 
-  for (let i = 0; i < customers.length; i++) {
-    let penal = 0;
+//   for (let i = 0; i < customers.length; i++) {
+//     let penal = 0;
 
-    // penalty[i + 1] = 0;
+//     let time = i + 1;
 
-    let time = i + 1;
+//     const storeOpen = customers[i];
 
-    const open = customers[i];
+//     console.log('/////////////////////');
+//     console.log('Time Close ', time);
 
-    // console.log(penal)
-    console.log('/////////////////////');
-    console.log('Time Close ', time);
+//     for (let j = 0; j < customers.length; j++) {
+//       console.log('--------------------------------');
+//       const client = customers[j];
+//       // console.log(customers[j], 'storeOpen yes or no ', customers[i]);
 
-    for (let j = 0; j < customers.length; j++) {
-      console.log('--------------------------------')
-      const client = customers[j];
-      // console.log(customers[j], 'open yes or no ', customers[i]);
-      if(i === j) {
-        console.log(
-          'I === J ',
-          open,
-          'clients --->',
-          customers[j],
-          '          ',
-          'client -->',
-          client,
-          'CLOSED ',
-          open
-        );
-        penal--
+//       if (i === j) {
+//       }
 
-      } 
+//       if (j <= i) {
+//         console.log(
+//           'CLOSED',
+//           storeOpen,
+//           'clients --->',
+//           customers[j],
+//           '          ',
+//           'client -->',
+//           client,
+//           'CLOSED ',
+//           storeOpen
+//         );
+//         if (storeOpen === 'Y' && client === 'Y') {
+//           penal++;
+//           console.log(
+//             `CLOSED? ${storeOpen} && client? ${client} ---> %cPENALTY`,
+//             'color: red; font-size: larger'
+//           );
+//         }
+//       } else {
+//         console.log(
+//           'OPEN   ',
+//           storeOpen,
+//           'clients --->',
+//           customers[j],
+//           '          ',
+//           'client -->',
+//           client,
+//           'OPEN ',
+//           storeOpen
+//         );
+//         if (storeOpen === 'N' && client === 'Y') {
+//           penal++;
+//           console.log(
+//             `OPEN? ${storeOpen} && client? ${client} ---> %cPENALTY`,
+//             'color: yellow; font-size: larger'
+//           );
+//         }
+//       }
+//     }
 
-      if (j >= i) {
-        console.log(
-          'CLOSED',
-          open,
-          'clients --->',
-          customers[j],
-          '          ',
-          'client -->',
-          client,
-          'CLOSED ',
-          open
-        );
-        if (open === 'Y' && client === 'Y') {
-          penal++;
-          console.log(`CLOSED? ${open} && client? ${client} ---> PENALTY`);
-        }
+//     penalty[`Time ${i + 1}`] = penal;
+//   }
 
-      } else {
-        console.log(
-          'OPEN   ',
-          open,
-          'clients --->',
-          customers[j],
-          '          ',
-          'client -->',
-          client,
-          'OPEN ',
-          open
-        );
-        if (open === 'N' && client === 'Y') {
-          penal++;
-          console.log(`OPEN? ${open} && client? ${client} ---> PENALTY`);
-        }
-      }
+//   console.table(penalty);
+// };
 
-
-    }
-
-    penalty[`Time ${i + 1}`] = penal;
-  }
-
-  console.table(penalty);
-};
-
-bestClosingTime('YYNY');
+// bestClosingTime('YYNY');
 
 ///////////////////////////////////////////////
 // 482. License Key Formatting
@@ -175,3 +163,31 @@ bestClosingTime('YYNY');
 // };
 
 // licenseKeyFormatting('5F3Z-2e-9-w', 4);
+
+///////////////////////////////////////////////
+// 824. Goat Latin
+///////////////////////////////////////////////
+var toGoatLatin = function (sentence) {
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+
+  const splitted = sentence.split(' ');
+
+  let strArr = []
+
+  for (let i = 0; i < splitted.length; i++) {
+    console.log(splitted[i]);
+
+    const isVowel = vowels.includes(splitted[i][0])
+
+    console.log(isVowel)
+
+    if(isVowel) {
+      strArr.push(`${splitted[i]}ma`)
+    }
+
+  }
+
+  console.log(strArr)
+};
+
+toGoatLatin('apple mapple');
