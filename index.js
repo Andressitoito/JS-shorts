@@ -172,22 +172,37 @@ var toGoatLatin = function (sentence) {
 
   const splitted = sentence.split(' ');
 
-  let strArr = []
+  let strArr = [];
 
   for (let i = 0; i < splitted.length; i++) {
     console.log(splitted[i]);
 
-    const isVowel = vowels.includes(splitted[i][0])
+    const isVowel = vowels.includes(splitted[i][0]);
 
-    console.log(isVowel)
+    console.log(isVowel);
 
-    if(isVowel) {
-      strArr.push(`${splitted[i]}ma`)
+    const a = 'a'.repeat(i + 1);
+
+    if (isVowel) {
+      strArr.push(`${splitted[i]}ma${a}`);
+    } else {
+
+      const word = `${splitted[i].slice(1)}${splitted[i][0]}ma${a}`
+
+      console.log(word)
+
+      strArr.push(word)
+
     }
-
   }
 
-  console.log(strArr)
+  console.log(strArr);
+
+  const response = strArr.join(' ')
+
+  console.log(response)
+
+  return response
 };
 
-toGoatLatin('apple mapple');
+toGoatLatin('The quick brown fox jumped over the lazy dog');
