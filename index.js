@@ -167,42 +167,72 @@
 ///////////////////////////////////////////////
 // 824. Goat Latin
 ///////////////////////////////////////////////
-var toGoatLatin = function (sentence) {
-  const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+// var toGoatLatin = function (sentence) {
+//   const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
 
-  const splitted = sentence.split(' ');
+//   const splitted = sentence.split(' ');
 
-  let strArr = [];
+//   let strArr = [];
 
-  for (let i = 0; i < splitted.length; i++) {
-    console.log(splitted[i]);
+//   for (let i = 0; i < splitted.length; i++) {
+//     console.log(splitted[i]);
 
-    const isVowel = vowels.includes(splitted[i][0]);
+//     const isVowel = vowels.includes(splitted[i][0]);
 
-    console.log(isVowel);
+//     console.log(isVowel);
 
-    const a = 'a'.repeat(i + 1);
+//     const a = 'a'.repeat(i + 1);
 
-    if (isVowel) {
-      strArr.push(`${splitted[i]}ma${a}`);
-    } else {
+//     if (isVowel) {
+//       strArr.push(`${splitted[i]}ma${a}`);
+//     } else {
 
-      const word = `${splitted[i].slice(1)}${splitted[i][0]}ma${a}`
+//       const word = `${splitted[i].slice(1)}${splitted[i][0]}ma${a}`
 
-      console.log(word)
+//       console.log(word)
 
-      strArr.push(word)
+//       strArr.push(word)
 
+//     }
+//   }
+
+//   console.log(strArr);
+
+//   const response = strArr.join(' ')
+
+//   console.log(response)
+
+//   return response
+// };
+
+// toGoatLatin('The quick brown fox jumped over the lazy dog');
+
+///////////////////////////////////////////////
+// 49. Group Anagrams
+///////////////////////////////////////////////
+var groupAnagrams = function (strs) {
+  console.table(strs);
+
+  for (let i = 0; i < strs.length; i++) {
+    let strA = strs[i];
+
+    for (let j = i + 1; j < strs.length; j++) {
+
+    let strB = strs[j];
+
+    const strBS = strB.split('').sort((a,b) => a-b)
+    console.log("strBS ", strBS)
+    
+    console.log(strB)
+
+      for (let k = 0; k < strA.length; k++) {}
+    
+    
+    
+      
+      
     }
   }
-
-  console.log(strArr);
-
-  const response = strArr.join(' ')
-
-  console.log(response)
-
-  return response
 };
 
-toGoatLatin('The quick brown fox jumped over the lazy dog');
+groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
