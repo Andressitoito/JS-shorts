@@ -213,26 +213,40 @@
 var groupAnagrams = function (strs) {
   console.table(strs);
 
+  let groups = [];
+
+  const start = strs[0].split('').sort().join('');
+  const unique = [start];
+
+  for (let i = 0; i < strs.length; i++) {}
+
   for (let i = 0; i < strs.length; i++) {
+    console.log('/////////////////////////////////');
     let strA = strs[i];
+    const strAS = strA.split('').sort();
+    const strASJoined = strAS.join('');
+    console.log('strASJoined ', strASJoined);
+
+    let groupA = [strA];
+    console.log(' groupA ', groupA);
 
     for (let j = i + 1; j < strs.length; j++) {
+      let strB = strs[j];
 
-    let strB = strs[j];
+      const strBS = strB.split('').sort();
+      const strBSJoined = strBS.join('');
+      console.log('strBSJoined ', strBSJoined);
 
-    const strBS = strB.split('').sort((a,b) => a-b)
-    console.log("strBS ", strBS)
-    
-    console.log(strB)
-
-      for (let k = 0; k < strA.length; k++) {}
-    
-    
-    
-      
-      
+      if (strASJoined === strBSJoined) {
+        console.log('%cstrings equal ', 'color: yellow');
+        groupA.push(strB);
+      }
     }
+
+    groups.push(groupA);
   }
+
+  console.log(groups);
 };
 
 groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
