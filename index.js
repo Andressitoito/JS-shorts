@@ -216,37 +216,36 @@ var groupAnagrams = function (strs) {
   let groups = [];
 
   const start = strs[0].split('').sort().join('');
-  const unique = [start];
+  const sortedStr = strs.map((str) => {
+    console.log(str.split('').sort().join(''));
+    const sorted = str.split('').sort().join('');
+    return sorted;
+  });
 
-  for (let i = 0; i < strs.length; i++) {}
-
-  for (let i = 0; i < strs.length; i++) {
-    console.log('/////////////////////////////////');
-    let strA = strs[i];
-    const strAS = strA.split('').sort();
-    const strASJoined = strAS.join('');
-    console.log('strASJoined ', strASJoined);
-
-    let groupA = [strA];
-    console.log(' groupA ', groupA);
-
-    for (let j = i + 1; j < strs.length; j++) {
-      let strB = strs[j];
-
-      const strBS = strB.split('').sort();
-      const strBSJoined = strBS.join('');
-      console.log('strBSJoined ', strBSJoined);
-
-      if (strASJoined === strBSJoined) {
-        console.log('%cstrings equal ', 'color: yellow');
-        groupA.push(strB);
-      }
+  console.log()
+  const unique = []
+  for (let i = 0; i < sortedStr.length; i++) {
+    if(!unique.includes(sortedStr[i])) {
+      unique.push(sortedStr[i])
     }
-
-    groups.push(groupA);
+    
   }
 
-  console.log(groups);
+  console.log(unique)
+
+  for (let i = 0; i < unique.length; i++) {
+    const uniq = []
+
+    for (let j = 0; j < strs.length; j++) {
+
+      const formedStr = strs[j].split('').sort().join('')
+      console.log(formedStr)
+
+
+    }
+
+
+  }
 };
 
 groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
