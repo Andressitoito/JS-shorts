@@ -237,22 +237,22 @@ var groupAnagrams = function (strs) {
     const uniqStr = unique[i];
     console.log('unique string ', uniqStr);
 
-    // for (let j = 0; j < strs.length; j++) {
-    //   const formedStr = strs[j].split('').sort().join('');
-    //   console.log('formedStr', formedStr);
-    //   if(uniqStr === formedStr){
-    //     uniq.push(strs[j])
-    //   }
-    // }
+    for (let j = 0; j < strs.length; j++) {
+      const formedStr = strs[j].split('').sort().join('');
+      console.log('formedStr', formedStr);
+      if (uniqStr === formedStr) {
+        uniq.push(strs[j]);
+      }
+    }
 
-    // console.log("group unique ", uniq)
+    console.log('group unique ', uniq);
 
-    // unique.push(uniq)
-
+    groups.push(uniq);
   }
 
-  console.log("%cFinal answer", "color: yellow",unique)
+  console.log('%cFinal answer', 'color: yellow', groups);
 
+  console.table(groups)
 };
 
 groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
