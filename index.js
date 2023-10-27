@@ -210,49 +210,106 @@
 ///////////////////////////////////////////////
 // 49. Group Anagrams
 ///////////////////////////////////////////////
-var groupAnagrams = function (strs) {
-  console.table(strs);
+// var groupAnagrams = function (strs) {
+//   console.table(strs);
 
-  let groups = [];
+//   let groups = [];
 
-  const start = strs[0].split('').sort().join('');
-  const sortedStr = strs.map((str) => {
-    console.log(str.split('').sort().join(''));
-    const sorted = str.split('').sort().join('');
-    return sorted;
-  });
+//   const start = strs[0].split('').sort().join('');
+//   const sortedStr = strs.map((str) => {
+//     console.log(str.split('').sort().join(''));
+//     const sorted = str.split('').sort().join('');
+//     return sorted;
+//   });
 
-  console.log();
-  const unique = [];
-  for (let i = 0; i < sortedStr.length; i++) {
-    if (!unique.includes(sortedStr[i])) {
-      unique.push(sortedStr[i]);
+//   console.log();
+//   const unique = [];
+//   for (let i = 0; i < sortedStr.length; i++) {
+//     if (!unique.includes(sortedStr[i])) {
+//       unique.push(sortedStr[i]);
+//     }
+//   }
+
+//   console.log(unique);
+
+//   for (let i = 0; i < unique.length; i++) {
+//     const uniq = [];
+//     const uniqStr = unique[i];
+//     console.log('unique string ', uniqStr);
+
+//     for (let j = 0; j < strs.length; j++) {
+//       const formedStr = strs[j].split('').sort().join('');
+//       console.log('formedStr', formedStr);
+//       if (uniqStr === formedStr) {
+//         uniq.push(strs[j]);
+//       }
+//     }
+
+//     console.log('group unique ', uniq);
+
+//     groups.push(uniq);
+//   }
+
+//   console.log('%cFinal answer', 'color: yellow', groups);
+
+//   console.table(groups)
+// };
+
+// groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
+
+// MEDIUM STRING
+///////////////////////////////////////////////
+// 1689. Partitioning Into Minimum Number Of Deci-Binary Numbers
+///////////////////////////////////////////////
+var minPartitions = function (n) {
+  console.log(n);
+
+  const arr_n = n.split('').reverse();
+  console.log(arr_n);
+
+  const binarys = [];
+  let multiply = 1;
+
+  for (let i = 0; i < arr_n.length; i++) {
+    let num = arr_n[i];
+
+    while (num > 0) {
+      console.log('num');
+
+      binarys.push(1 * multiply);
+
+      num--;
+      // break;
     }
+    // binarys.push(num * multiply);
+
+    multiply *= 10;
   }
 
-  console.log(unique);
-
-  for (let i = 0; i < unique.length; i++) {
-    const uniq = [];
-    const uniqStr = unique[i];
-    console.log('unique string ', uniqStr);
-
-    for (let j = 0; j < strs.length; j++) {
-      const formedStr = strs[j].split('').sort().join('');
-      console.log('formedStr', formedStr);
-      if (uniqStr === formedStr) {
-        uniq.push(strs[j]);
-      }
-    }
-
-    console.log('group unique ', uniq);
-
-    groups.push(uniq);
-  }
-
-  console.log('%cFinal answer', 'color: yellow', groups);
-
-  console.table(groups)
+  console.log(binarys);
 };
 
-groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
+minPartitions('32');
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+// var oddEvenList = function (head) {};
+
+// function ListNode(val, next) {
+//   this.val = val === undefined ? 0 : val;
+//   this.next = next === undefined ? null : next;
+// }
+
+// function createLinkedList(node) {
+//   let node = ListNode(0)
+
+// }
