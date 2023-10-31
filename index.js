@@ -1,32 +1,4 @@
 ///////////////////////////////////////////////
-// 2047. Number of Valid Words in a Sentence
-///////////////////////////////////////////////
-// var countValidWords = function (sentence) {
-//   console.log(sentence);
-
-//   const array = sentence.split(' ');
-//   console.log(array);
-//   const regex = /[a-z]/g;
-
-//   let valids = 0;
-
-//   for (let i = 0; i < array.length; i++) {
-//     console.log(array[i]);
-//     const word = array[i];
-//     if (word === '') continue;
-//     const str = word.match(regex).join('');
-
-//     if (word === str) {
-//       valids++;
-//     }
-//   }
-
-//   console.log(valids);
-// };
-
-// countValidWords('alice and  bob are playing stone-game10');
-
-///////////////////////////////////////////////
 // 2483. Minimum Penalty for a Shop
 ///////////////////////////////////////////////
 // var bestClosingTime = function (customers) {
@@ -289,27 +261,13 @@ var minPartitions = function (n) {
   console.log(binarys);
 };
 
-minPartitions('32');
+// minPartitions('932');
 
-/**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-// var oddEvenList = function (head) {};
-
-// function ListNode(val, next) {
-//   this.val = val === undefined ? 0 : val;
-//   this.next = next === undefined ? null : next;
-// }
-
-// function createLinkedList(node) {
-//   let node = ListNode(0)
-
-// }
+///////////////////////////////////////////////
+// SLIDING WINDOWS
+///////////////////////////////////////////////
+function maxSumArr(arr, num) {
+  let maxSum = 0;
+  let tempSum = 0;
+  
+}
