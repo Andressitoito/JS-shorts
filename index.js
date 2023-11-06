@@ -269,5 +269,42 @@ var minPartitions = function (n) {
 function maxSumArr(arr, num) {
   let maxSum = 0;
   let tempSum = 0;
-  
 }
+
+///////////////////////////////////////////////
+// 1805. Number of Different Integers in a String
+///////////////////////////////////////////////
+var numDifferentIntegers = function (word) {
+  console.log(word);
+
+  const numbers = [];
+  let num = '';
+
+  for (let i = 0; i < word.length; i++) {
+    const char = word[i];
+
+    if (!isNaN(char)) {
+      console.log(char);
+      num += char;
+    }
+    if (isNaN(word[i + 1])) {
+      console.log('next one is a char', word[i + 1]);
+      num != '' &&
+        !numbers.includes(parseInt(num)) &&
+        numbers.push(parseInt(num));
+      num = '';
+    }
+  }
+
+  console.log(numbers);
+
+  console.log(numbers.includes('34'));
+
+  const response = numbers.length;
+
+  console.log(response);
+
+  return response;
+};
+
+numDifferentIntegers('a1b01c001');
