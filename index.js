@@ -266,10 +266,36 @@ var minPartitions = function (n) {
 ///////////////////////////////////////////////
 // SLIDING WINDOWS
 ///////////////////////////////////////////////
-function maxSumArr(arr, num) {
+function maxSumArr(arr, k) {
   let maxSum = 0;
   let tempSum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    console.log('///////////////////////////////////');
+    for (let j = 0; j < k; j++) {
+      console.log(i + j);
+
+      const num = arr[i + j];
+
+      if (num === undefined) {
+        break;
+      }
+
+      tempSum += num;
+    }
+
+    if (tempSum > maxSum) {
+      maxSum = tempSum;
+      console.log(maxSum);
+    }
+
+    tempSum = 0;
+  }
+
+  console.log('response ', maxSum);
 }
+
+// maxSumArr([3, 5, 4, 5, 6, 2], 3);
 
 ///////////////////////////////////////////////
 // 1805. Number of Different Integers in a String
@@ -307,4 +333,39 @@ var numDifferentIntegers = function (word) {
   return response;
 };
 
-numDifferentIntegers('a1b01c001');
+// numDifferentIntegers('a1b01c001');
+
+///////////////////////////////////////////////
+// 682. Baseball Game
+///////////////////////////////////////////////
+var calPoints = function (operations) {
+  let response = 0;
+
+  let prev_1 = null;
+  let prev_2 = null;
+
+  for (let i = 0; i < operations.length; i++) {
+    const op = operations[i];
+
+    if (op == '+' && i === 0) {
+      continue;
+    }
+
+    if (!isNaN(op)) {
+      console.log('number', op);
+      response += op;
+
+      if (prev_1 === null) {
+        prev_2 = op;
+      } else if (prev_2 === null) {
+        prev_1 = op;
+      } else if (prev_1 !== null && prev_2 !== null) {
+        
+      }
+    } else {
+      console.log('NO number', op);
+    }
+  }
+};
+
+calPoints(['5', '2', 'C', 'D', '+']);
