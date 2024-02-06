@@ -375,9 +375,49 @@ var calPoints = function (operations) {
     sum += record[i];
   }
 
-  console.log(sum)
+  console.log(sum);
 
-  return sum
+  return sum;
 };
 
-calPoints(["1","C"]);
+// calPoints(["1","C"]);
+
+/*
+Problem (Easy):
+Given matrices A and B, return their sum as a new matrix. You can assume that both matrices are of the same dimensions.
+
+Example:
+
+Input:
+
+Output:
+[[6, 8],
+ [10, 12]]
+
+ */
+
+function addMatrices(matA, matB) {
+  let sum = [];
+  for (let i = 0; i < matA.length; i++) {
+      for (let j = 0; j < A[i].length; j++) {
+
+        console.log(matA)
+        
+      
+    } 
+  }
+
+  console.log(sum)
+
+}
+A = [
+  [1, 2],
+  [3, 4],
+];
+
+B = [
+  [5, 6],
+  [7, 8],
+];
+
+addMatrices(A, B);
