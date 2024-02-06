@@ -339,10 +339,7 @@ var numDifferentIntegers = function (word) {
 // 682. Baseball Game
 ///////////////////////////////////////////////
 var calPoints = function (operations) {
-  let response = 0;
-
-  let prev_1 = null;
-  let prev_2 = null;
+  let record = [];
 
   for (let i = 0; i < operations.length; i++) {
     const op = operations[i];
@@ -353,19 +350,34 @@ var calPoints = function (operations) {
 
     if (!isNaN(op)) {
       console.log('number', op);
-      response += op;
 
-      if (prev_1 === null) {
-        prev_2 = op;
-      } else if (prev_2 === null) {
-        prev_1 = op;
-      } else if (prev_1 !== null && prev_2 !== null) {
-        
-      }
+      record.push(op * 1);
     } else {
       console.log('NO number', op);
+
+      if (op === '+') {
+        const num = record[record.length - 1] + record[record.length - 2];
+        record.push(num);
+      } else if (op === 'D') {
+        const num = record[record.length - 1] * 2;
+        record.push(num);
+      } else if (op === 'C') {
+        record.pop();
+      }
     }
   }
+
+  console.log(record);
+
+  let sum = 0;
+
+  for (let i = 0; i < record.length; i++) {
+    sum += record[i];
+  }
+
+  console.log(sum)
+
+  return sum
 };
 
-calPoints(['5', '2', 'C', 'D', '+']);
+calPoints(["1","C"]);
