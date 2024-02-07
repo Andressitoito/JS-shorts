@@ -397,18 +397,18 @@ Output:
  */
 
 function addMatrices(matA, matB) {
-  let sum = [];
+  let sum = [...matA];
   for (let i = 0; i < matA.length; i++) {
-      for (let j = 0; j < A[i].length; j++) {
+    for (let j = 0; j < matA.length; j++) {
+      const add = matA[i][j] + matB[i][j];
 
-        console.log(matA)
-        
-      
-    } 
+      console.log(add);
+
+      sum[i][j] = add;
+    }
   }
 
-  console.log(sum)
-
+  console.log(sum);
 }
 A = [
   [1, 2],
