@@ -395,21 +395,6 @@ Output:
  [10, 12]]
 
  */
-
-function addMatrices(matA, matB) {
-  let sum = [...matA];
-  for (let i = 0; i < matA.length; i++) {
-    for (let j = 0; j < matA.length; j++) {
-      const add = matA[i][j] + matB[i][j];
-
-      console.log(add);
-
-      sum[i][j] = add;
-    }
-  }
-
-  console.log(sum);
-}
 A = [
   [1, 2],
   [3, 4],
@@ -420,4 +405,58 @@ B = [
   [7, 8],
 ];
 
-addMatrices(A, B);
+function addMatrices(matA, matB) {
+  let sum = [...matA];
+  for (let i = 0; i < matA.length; i++) {
+    for (let j = 0; j < matA[i].length; j++) {
+      const add = matA[i][j] + matB[i][j];
+      sum[i][j] = add;
+    }
+  }
+
+  return sum;
+}
+// addMatrices(A, B);
+
+/*
+Problem (Slightly Harder):
+Given two matrices A and B, return their product as a new matrix. You can assume that the number of columns in matrix A is equal to the number of rows in matrix B.
+
+Output:
+[[58, 64],
+[139, 154]]
+*/
+C = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+
+D = [
+  [7, 8],
+  [9, 10],
+  [11, 12],
+];
+
+function transposeMatrix(matrix) {
+  console.log(matrix);
+
+  const transposed = [];
+
+  const columns = matrix[0].length;
+  const rows = matrix.length;
+  console.log('columns ', columns);
+  console.log('rows ', rows);
+
+  for (let i = 0; i < columns; i++) {
+    const column = [];
+    for (let j = 0; j < rows; j++) {
+      console.log('matrix [i] ', matrix[j][i], i, j);
+      column.push(matrix[j][i]);
+    }
+    transposed.push(column);
+  }
+
+  console.log(transposed);
+}
+
+transposeMatrix(C);
