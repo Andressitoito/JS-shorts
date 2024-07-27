@@ -444,8 +444,8 @@ function transposeMatrix(matrix) {
 
   const columns = matrix[0].length;
   const rows = matrix.length;
-  console.log('columns ', columns);
-  console.log('rows ', rows);
+  // console.log('columns ', columns);
+  // console.log('rows ', rows);
 
   for (let i = 0; i < columns; i++) {
     const column = [];
